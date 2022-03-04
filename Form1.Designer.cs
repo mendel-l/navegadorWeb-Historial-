@@ -38,12 +38,12 @@ namespace navegadorWeb
             this.siguienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anteriorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addressBar = new System.Windows.Forms.ComboBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.historialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masVisitadasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masRecientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addressBar = new System.Windows.Forms.ComboBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.webView21 = new Microsoft.Web.WebView2.WinForms.WebView2();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.webView21)).BeginInit();
@@ -93,30 +93,51 @@ namespace navegadorWeb
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.inicioToolStripMenuItem.Text = "inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // siguienteToolStripMenuItem
             // 
             this.siguienteToolStripMenuItem.Name = "siguienteToolStripMenuItem";
-            this.siguienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.siguienteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.siguienteToolStripMenuItem.Text = "siguiente";
             this.siguienteToolStripMenuItem.Click += new System.EventHandler(this.siguienteToolStripMenuItem_Click);
             // 
             // anteriorToolStripMenuItem
             // 
             this.anteriorToolStripMenuItem.Name = "anteriorToolStripMenuItem";
-            this.anteriorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.anteriorToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.anteriorToolStripMenuItem.Text = "anterior";
             this.anteriorToolStripMenuItem.Click += new System.EventHandler(this.anteriorToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.salirToolStripMenuItem.Text = "salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // historialToolStripMenuItem
+            // 
+            this.historialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.masVisitadasToolStripMenuItem,
+            this.masRecientesToolStripMenuItem});
+            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
+            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.historialToolStripMenuItem.Text = "Historial";
+            // 
+            // masVisitadasToolStripMenuItem
+            // 
+            this.masVisitadasToolStripMenuItem.Name = "masVisitadasToolStripMenuItem";
+            this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.masVisitadasToolStripMenuItem.Text = "mas visitadas";
+            // 
+            // masRecientesToolStripMenuItem
+            // 
+            this.masRecientesToolStripMenuItem.Name = "masRecientesToolStripMenuItem";
+            this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.masRecientesToolStripMenuItem.Text = "mas recientes";
             // 
             // addressBar
             // 
@@ -160,27 +181,6 @@ namespace navegadorWeb
             this.webView21.Size = new System.Drawing.Size(708, 428);
             this.webView21.TabIndex = 5;
             this.webView21.ZoomFactor = 1D;
-            // 
-            // historialToolStripMenuItem
-            // 
-            this.historialToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.masVisitadasToolStripMenuItem,
-            this.masRecientesToolStripMenuItem});
-            this.historialToolStripMenuItem.Name = "historialToolStripMenuItem";
-            this.historialToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.historialToolStripMenuItem.Text = "Historial";
-            // 
-            // masVisitadasToolStripMenuItem
-            // 
-            this.masVisitadasToolStripMenuItem.Name = "masVisitadasToolStripMenuItem";
-            this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.masVisitadasToolStripMenuItem.Text = "mas visitadas";
-            // 
-            // masRecientesToolStripMenuItem
-            // 
-            this.masRecientesToolStripMenuItem.Name = "masRecientesToolStripMenuItem";
-            this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.masRecientesToolStripMenuItem.Text = "mas recientes";
             // 
             // Form1
             // 
