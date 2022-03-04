@@ -93,28 +93,28 @@ namespace navegadorWeb
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.inicioToolStripMenuItem.Text = "inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // siguienteToolStripMenuItem
             // 
             this.siguienteToolStripMenuItem.Name = "siguienteToolStripMenuItem";
-            this.siguienteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.siguienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.siguienteToolStripMenuItem.Text = "siguiente";
             this.siguienteToolStripMenuItem.Click += new System.EventHandler(this.siguienteToolStripMenuItem_Click);
             // 
             // anteriorToolStripMenuItem
             // 
             this.anteriorToolStripMenuItem.Name = "anteriorToolStripMenuItem";
-            this.anteriorToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.anteriorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.anteriorToolStripMenuItem.Text = "anterior";
             this.anteriorToolStripMenuItem.Click += new System.EventHandler(this.anteriorToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salirToolStripMenuItem.Text = "salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -130,13 +130,13 @@ namespace navegadorWeb
             // masVisitadasToolStripMenuItem
             // 
             this.masVisitadasToolStripMenuItem.Name = "masVisitadasToolStripMenuItem";
-            this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.masVisitadasToolStripMenuItem.Text = "mas visitadas";
             // 
             // masRecientesToolStripMenuItem
             // 
             this.masRecientesToolStripMenuItem.Name = "masRecientesToolStripMenuItem";
-            this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.masRecientesToolStripMenuItem.Text = "mas recientes";
             // 
             // addressBar
