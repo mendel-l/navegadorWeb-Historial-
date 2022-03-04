@@ -2,16 +2,22 @@
 using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace navegadorWeb
 {
     public partial class Form1 : Form
     {
+        List<HistorialURLs> URLs = new List<HistorialURLs>();
+        string nombreArchivo = "Historial.txt";
         public Form1()
         {
             InitializeComponent();
             webView21.NavigationStarting += WebView21_NavigationStarting;
             InitializeAsync();
+
+            Read();
         }
 
         private void WebView21_NavigationStarting(object sender, Microsoft.Web.WebView2.Core.CoreWebView2NavigationStartingEventArgs e)
@@ -32,74 +38,110 @@ namespace navegadorWeb
         {
             String uri = args.TryGetWebMessageAsString();
             addressBar.Text = uri;
-            //webView21.CoreWebView2.PostWebMessageAsString(uri);
         }
 
-        private void Read(String pathIn)
+        private void Save()
         {
-            FileStream stream = new FileStream(pathIn, FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(stream);
+            FileStream stream = new FileStream(nombreArchivo, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
 
-            while (reader.Peek() < -1)
+            foreach(HistorialURLs dato in URLs )
             {
-                string texto = reader.ReadLine();
-                addressBar.Items.Add(addressBar.Text);
+                var lineaAAGregar = dato.texto + "|" + dato.numero + "|" + dato.fecha.ToString("yyyy-MM-dd HH:mm:ss");
+                writer.WriteLine(lineaAAGregar);
             }
-            reader.Close();
-        }
 
-        private void Save(string nombreArchivo, string texto)
-        {
-            //FileStream stream = new FileStream(nombreArchivo, FileMode.Append, FileAccess.Write);
-            StreamWriter writer = new /*StreamWriter(stream);*/StreamWriter(nombreArchivo, true);
-
-            writer.WriteLine(texto);
             writer.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string textoANavegar = addressBar.Text;
-
-            Save(@"historialNavegacion.txt", addressBar.Text);
-            //el txt. se guarda en la ubicacion donde esta creado el archivo en la carpeta bin/Debug en esta ultima se encuentra el archivo txt.
-
-            if (textoANavegar.StartsWith("https://www.google.com/search?q=") == false)
+            string textoANavegar = "";
+            if (addressBar.Text != null)
             {
-                addressBar.Items.Add("https://www.google.com/search?q=" + addressBar.Text);
+                textoANavegar = addressBar.Text;
             }
-            //addressBar.Items.Add(addressBar.Text);
-
-            // es una direccion
-            if (textoANavegar.Contains(".com") || textoANavegar.Contains("http") ||
-                textoANavegar.Contains("www"))
+            else if (addressBar.SelectedItem != null)
             {
-                if (textoANavegar.StartsWith("https://") == false
-                    && textoANavegar.StartsWith("http://") == false)
-                {
-                    textoANavegar = "https://" + textoANavegar;
-                }
-
-                webView21.CoreWebView2.Navigate(textoANavegar);
+                textoANavegar = addressBar.SelectedItem.ToString();
             }
-            // es una palabra
-            else
+            if (!textoANavegar.Contains("."))
             {
-                webView21.CoreWebView2.Navigate("https://www.google.com/search?q=" + textoANavegar);
+                textoANavegar = "https://www.google.com/search?q=" + textoANavegar;
             }
-
+            if (!textoANavegar.Contains("https://"))
+            {
+                textoANavegar = "https://" + textoANavegar;
+            }
+            //texto a usar
+            AgregaralHitorial(textoANavegar);
+          
+            webView21.CoreWebView2.Navigate(textoANavegar);
         }
 
+        public void AgregaralHitorial(string texto)
+        {
+            int posicion = URLs.FindIndex(n => n.texto == texto);
+
+            if (posicion == -1)
+            {
+                HistorialURLs dato = new HistorialURLs();
+                dato.numero = 1;
+                dato.texto = texto;
+                dato.fecha = DateTime.Now;
+
+                URLs.Add(dato);
+            }
+            else
+            {
+                URLs[posicion].numero++;
+                URLs[posicion].fecha = DateTime.Now;
+            }
+
+            MostrarDatos();
+            Save();
+        }
+
+        private void MostrarDatos()
+        {
+            // ordenar del mas visitado al menos visitado
+            URLs = URLs.OrderByDescending(x => x.numero).ToList();
+
+            // agregar al combo
+            addressBar.Items.Clear();
+            addressBar.Items.AddRange(URLs.Select(x => x.texto).ToArray());
+            addressBar.Refresh();            
+        }
+    
+        private void Read()
+        {
+            FileStream stream = new FileStream(nombreArchivo, FileMode.Open, FileAccess.Read);
+            StreamReader reader = new StreamReader(stream);
+
+            while (reader.Peek() > -1)
+            {
+                var linea = reader.ReadLine();
+                var partes = linea.Split('|');
+
+                var dato = new HistorialURLs();
+                dato.texto = partes[0];
+                dato.numero = int.Parse(partes[1]);
+                dato.fecha = DateTime.Parse(partes[2]);      
+                
+                URLs.Add(dato);
+            }
+
+            reader.Close();
+            MostrarDatos();
+        }
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
         }
-
         private void siguienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webView21.GoForward();
         }
-
         private void anteriorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             webView21.GoBack();
@@ -109,22 +151,16 @@ namespace navegadorWeb
         {
             this.Close();
         }
-
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
 
         }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            Read(@"historialNavegacion.txt");
-            //Read(@"Y:\A LA UNI cap3\PROGRAMACION\Laboratorios\Laboratorio #3\navegadorHistorial\navegadorWeb\bin\Debug\historialNavegacion.txt");
+            //Read("Historial.txt");
         }
-
         private void addressBar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Read(@"historialNavegacion.txt");
-            //Read(@"Y:\A LA UNI cap3\PROGRAMACION\Laboratorios\Laboratorio #3\navegadorHistorial\navegadorWeb\bin\Debug\historialNavegacion.txt");
         }
     }
 }
