@@ -52,7 +52,7 @@ namespace navegadorWeb
             // buttonIR
             // 
             this.buttonIR.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonIR.Location = new System.Drawing.Point(628, 3);
+            this.buttonIR.Location = new System.Drawing.Point(800, 3);
             this.buttonIR.Name = "buttonIR";
             this.buttonIR.Size = new System.Drawing.Size(81, 26);
             this.buttonIR.TabIndex = 0;
@@ -75,7 +75,7 @@ namespace navegadorWeb
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(712, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,28 +93,28 @@ namespace navegadorWeb
             // inicioToolStripMenuItem
             // 
             this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.inicioToolStripMenuItem.Text = "inicio";
             this.inicioToolStripMenuItem.Click += new System.EventHandler(this.inicioToolStripMenuItem_Click);
             // 
             // siguienteToolStripMenuItem
             // 
             this.siguienteToolStripMenuItem.Name = "siguienteToolStripMenuItem";
-            this.siguienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.siguienteToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.siguienteToolStripMenuItem.Text = "siguiente";
             this.siguienteToolStripMenuItem.Click += new System.EventHandler(this.siguienteToolStripMenuItem_Click);
             // 
             // anteriorToolStripMenuItem
             // 
             this.anteriorToolStripMenuItem.Name = "anteriorToolStripMenuItem";
-            this.anteriorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.anteriorToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.anteriorToolStripMenuItem.Text = "anterior";
             this.anteriorToolStripMenuItem.Click += new System.EventHandler(this.anteriorToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.salirToolStripMenuItem.Text = "salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -130,13 +130,13 @@ namespace navegadorWeb
             // masVisitadasToolStripMenuItem
             // 
             this.masVisitadasToolStripMenuItem.Name = "masVisitadasToolStripMenuItem";
-            this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.masVisitadasToolStripMenuItem.Text = "mas visitadas";
             // 
             // masRecientesToolStripMenuItem
             // 
             this.masRecientesToolStripMenuItem.Name = "masRecientesToolStripMenuItem";
-            this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.masRecientesToolStripMenuItem.Text = "mas recientes";
             // 
             // addressBar
@@ -147,7 +147,7 @@ namespace navegadorWeb
             this.addressBar.FormattingEnabled = true;
             this.addressBar.Location = new System.Drawing.Point(3, 3);
             this.addressBar.Name = "addressBar";
-            this.addressBar.Size = new System.Drawing.Size(619, 28);
+            this.addressBar.Size = new System.Drawing.Size(791, 28);
             this.addressBar.TabIndex = 4;
             this.addressBar.SelectedIndexChanged += new System.EventHandler(this.addressBar_SelectedIndexChanged);
             // 
@@ -166,7 +166,7 @@ namespace navegadorWeb
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 464);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 487);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // webView21
@@ -178,7 +178,7 @@ namespace navegadorWeb
             this.webView21.Location = new System.Drawing.Point(2, 34);
             this.webView21.Margin = new System.Windows.Forms.Padding(2);
             this.webView21.Name = "webView21";
-            this.webView21.Size = new System.Drawing.Size(708, 428);
+            this.webView21.Size = new System.Drawing.Size(880, 451);
             this.webView21.TabIndex = 5;
             this.webView21.ZoomFactor = 1D;
             // 
@@ -187,7 +187,7 @@ namespace navegadorWeb
             this.AcceptButton = this.buttonIR;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 488);
+            this.ClientSize = new System.Drawing.Size(884, 511);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

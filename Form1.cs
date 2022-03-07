@@ -31,7 +31,7 @@ namespace navegadorWeb
 
             await webView21.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.postMessage(window.document.URL);");
             await webView21.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.addEventListener(\'message\', event => alert(event.data));");
-
+            //hola
         }
 
         void ActualizarBarraDireccion(object sender, CoreWebView2WebMessageReceivedEventArgs args)
@@ -130,7 +130,6 @@ namespace navegadorWeb
                 
                 URLs.Add(dato);
             }
-
             reader.Close();
             MostrarDatos();
         }
