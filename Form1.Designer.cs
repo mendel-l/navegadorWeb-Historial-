@@ -132,12 +132,14 @@ namespace navegadorWeb
             this.masVisitadasToolStripMenuItem.Name = "masVisitadasToolStripMenuItem";
             this.masVisitadasToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.masVisitadasToolStripMenuItem.Text = "mas visitadas";
+            this.masVisitadasToolStripMenuItem.Click += new System.EventHandler(this.masVisitadasToolStripMenuItem_Click);
             // 
             // masRecientesToolStripMenuItem
             // 
             this.masRecientesToolStripMenuItem.Name = "masRecientesToolStripMenuItem";
             this.masRecientesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.masRecientesToolStripMenuItem.Text = "mas recientes";
+            this.masRecientesToolStripMenuItem.Click += new System.EventHandler(this.masRecientesToolStripMenuItem_Click);
             // 
             // addressBar
             // 

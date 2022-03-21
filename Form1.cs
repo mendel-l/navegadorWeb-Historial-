@@ -16,7 +16,6 @@ namespace navegadorWeb
             InitializeComponent();
             webView21.NavigationStarting += WebView21_NavigationStarting;
             InitializeAsync();
-
             Read();
         }
 
@@ -31,7 +30,6 @@ namespace navegadorWeb
 
             await webView21.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.postMessage(window.document.URL);");
             await webView21.CoreWebView2.AddScriptToExecuteOnDocumentCreatedAsync("window.chrome.webview.addEventListener(\'message\', event => alert(event.data));");
-            //hola
         }
 
         void ActualizarBarraDireccion(object sender, CoreWebView2WebMessageReceivedEventArgs args)
@@ -160,6 +158,52 @@ namespace navegadorWeb
         }
         private void addressBar_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+        private void cargar()
+        {
+            /*addressBar.DataSource = null;
+            addressBar.Refresh();
+            addressBar.DisplayMember = "texto";
+            addressBar.DataSource = URLs;
+            addressBar.Refresh();*/
+        }
+        private void GuardarMasPaginasMasVisitadas()
+        {
+            /*FileStream stream = new FileStream(nombreArchivo, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+
+            foreach (HistorialURLs dato in URLs)
+            {
+                URLs = URLs.OrderByDescending(n => n.numero).ToList();
+                writer.WriteLine(dato.texto[0]);
+            }
+            writer.Close();*/
+        }
+
+        private void masVisitadasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*GuardarMasPaginasMasVisitadas();
+            URLs = URLs.OrderByDescending(n => n.numero).ToList();
+            cargar();*/
+        }
+        private void Guardar3A()
+        {
+            /*FileStream stream = new FileStream(nombreArchivo, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+
+            foreach (HistorialURLs dato in URLs)
+            {
+                URLs = URLs.OrderByDescending(m => m.fecha).ToList();
+                writer.WriteLine(dato.texto[0]);
+            }
+
+            writer.Close();*/
+        }
+        private void masRecientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*Guardar3A();
+            URLs = URLs.OrderByDescending(m => m.fecha).ToList();
+            cargar();*/
         }
     }
 }
